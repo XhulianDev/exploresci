@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  padding-right: 4%;
+  padding-left: 4%;
+  padding-bottom: 40px;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Lora;
+  font-size: 3em;
+  display: inline-block;
+}
+
+.learn {
+  width: 298px;
+  height: 260px;
+  display: inline-block;
+  border-radius: 16px;
+  background-color: blue;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  margin: 12px 10px 30px 10px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: blue;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 256px;
+  margin-left: 108px;
+  background: #f00;
+  color: #fff;
+  padding: 3px 12px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.learn1 {
+  background-image: url('../images/cell-theory.jpg');
+}
+
+.learn2 {
+  background-image: url('../images/genetics-heredity.jpg');
+}
+
+.learn3 {
+  background-image: url('../images/evolution.jpg');
+}
+
+.learn4 {
+  background-image: url('../images/ecology.webp');
+}
+
+.learn5 {
+  background-image: url('../images/photosynthesis.webp');
+}
+
+.learn6 {
+  background-image: url('../images/homeostasis.jpg');
+}
+
+.learn7 {
+  background-image: url('../images/human-anatomy-physiology.jpg');
+}
+
+.learn8 {
+  background-image: url('../images/microbiology.webp');
+}
+
+.learn9 {
+  background-image: url('../images/molecular-biology.webp');
+}
+
+.learn10 {
+  background-image: url('../images/reproduction.jpg');
+}
+
+.learn11 {
+  background-image: url('../images/genetic-engineering.webp');
+}
+
+.learn12 {
+  background-image: url('../images/ethics-in-biology.webp');
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ExploreSci</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" id="logo">ExploreSci</a>
+    <nav>
+      <ul>
+        <li><a href="index.html" id="home">Home</a></li>
+        <li><a href="#" onclick="openAbout()">About</a></li>
+        <li><a href="#" onclick="openCategory()">Category</a></li>
+        <li><a href="#" onclick="openContactUs()">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h1>About <span class="expl-science-h1">ExploreSci</span></h1>
+      <p><span class="expl">ExploreSci</span> is an educational platform dedicated to making science engaging and accessible. 
+        <br>Discover comprehensive resources on key events, milestones, and topics in science. Whether you're a student,
+        teacher, or enthusiast, join us to explore the wonders of knowledge!</p>
+      <button class="close-btn" onclick="closeAbout()" tabindex="0">X</button>
+    </div>
+  </div>
+  
+  <div class="popup" id="popup-2">
+    <div class="popup-content">
+      <h2>Category</h2>
+      <ul class="category-list">
+        <li><a href="physics/physics.html">Physics</a></li>
+        <li><a href="history/history.html">History</a></li>
+        <li><a href="geography/geography.html">Geography</a></li>
+        <li><a href="zoology/zoology.html">Zoology</a></li>
+        <li><a href="astronomy/astronomy.html">Astronomy</a></li>
+        
+        <li><a href="biology/biology.html">Biology</a></li>
+        <li><a href="chemistry/chemistry.html">Chemistry</a></li>
+        <li><a href="math/math.html">Math</a></li>
+        <li><a href="philosophy/philosophy.html">Philosophy</a></li>
+        
+        <li><a href="psychology/psychology.html">Psychology</a></li>
+        <li><a href="sociology/sociology.html">Sociology</a></li>
+        <li><a href="art/art.html">Art</a></li>
+        <li><a href="music/music.html">Music</a></li>
+      </ul>
+      <button class="close-btn" onclick="closeCategory()" tabindex="0">X</button>
+    </div>
+  </div>
+  
+  <div class="popup" id="popup-3">
+    <div class="popup-content">
+      <h2>Contact Us</h2>
+        <form onsubmit="handleSubmit(event)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required autocomplete="name">
+          <label for="email" class="email">Email:</label>
+          <input type="email" id="email" required autocomplete="email">
+          <div class="message-field">
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            <button type="submit">Send</button>
+          </div>
+        </form>
+        <button class="close-btn" onclick="closeContactUs()" aria-label="Close contact form" tabindex="0">X</button>
+    </div>
+  </div>
+  
+  <main>
+    <div class="hero">
+      <h1>Explore Science with <span class="expl3">ExploreSci</span></h1>
+    </div>
+    
+    <section class="featured-category">
+      <p class="physics-category-description">Click on this button to learn more about physics</p>
+      <button id="learn-physics" class="category-physics" data-tooltip="Physics"
+              aria-label="Open Physics category" tabindex="0">Start learning</button>
+    </section>
+    
+    <section id="main-category-grid" class="main-category-grid">
+      <button id="learn-history" class="category-button category-history" data-tooltip="History"
+              aria-label="Open History category" tabindex="0"></button>
+      <button id="learn-geography" class="category-button category-geography" data-tooltip="Geography"
+              aria-label="Open Geography category" tabindex="0"></button>
+      <button id="learn-zoology" class="category-button category-zoology" data-tooltip="Zoology"
+              aria-label="Open Zoology category" tabindex="0"></button>
+      <button id="learn-astronomy" class="category-button category-astronomy" data-tooltip="Astronomy"
+              aria-label="Open Astronomy category" tabindex="0"></button>
+      <div class="category-nav">
+        <a href="#" class="arrow-link" id="left-arrow" aria-label="Previous category group" aria-controls="category-group-3"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" class="arrow-link" id="right-arrow" aria-label="Next category group" aria-controls="category-group-2"><i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
+    
+    <section id="category-group-2" class="secondary-category-grid is-hidden">
+      <button id="learn-biology" class="category-button category-biology" data-tooltip="Biology"
+              aria-label="Open Biology category" tabindex="0"></button>
+      <button id="learn-chemistry" class="category-button category-chemistry" data-tooltip="Chemistry"
+              aria-label="Open Chemistry category" tabindex="0"></button>
+      <button id="learn-math" class="category-button category-math" data-tooltip="Math"
+              aria-label="Open Math category" tabindex="0"></button>
+      <button id="learn-philosophy" class="category-button category-philosophy"
+              data-tooltip="Philosophy" aria-label="Open Philosophy Category" tabindex="0"></button>
+      <div class="category-nav">
+        <a href="#" class="arrow-link" id="left-arrow2" aria-label="Previous category group" aria-controls="main-category-grid"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" class="arrow-link" id="right-arrow2" aria-label="Next category group" aria-controls="category-group-3"><i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
+    
+    <section id="category-group-3" class="secondary-category-grid is-hidden">
+      <button id="learn-psychology" class="category-button category-psychology"
+              data-tooltip="Psychology" aria-label="Open Psychology category" tabindex="0"></button>
+      <button id="learn-sociology" class="category-button category-sociology"
+              data-tooltip="Sociology" aria-label="Open Sociology category" tabindex="0"></button>
+      <button id="learn-art" class="category-button category-art" data-tooltip="Art"
+              aria-label="Open Art category" tabindex="0"></button>
+      <button id="learn-music" class="category-button category-music" data-tooltip="Music"
+              aria-label="Open Music category" tabindex="0"></button>
+      <div class="category-nav">
+        <a href="#" class="arrow-link" id="left-arrow3" aria-label="Previous category group" aria-controls="category-group-2"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" class="arrow-link" id="right-arrow3" aria-label="Next category group" aria-controls="main-category-grid"><i class="fas fa-arrow-right"></i></a>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Xhulian Azemi. All rights reserved.</p>
+  </footer>
+  <script>
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    form.reset();
+    const successMsg = document.createElement('p');
+    successMsg.textContent = 'Message sent successfully!';
+    successMsg.style.color = '#b50000';
+    form.appendChild(successMsg);
+    setTimeout(() => { successMsg.remove(); closeContactUs(); }, 3000);
+  }
+  
+  function openAbout() {
+    document.getElementById("popup").style.display = "flex";
+  }
+  
+  function closeAbout() {
+    document.getElementById("popup").style.display = "none";
+  }
+  
+  function openCategory() {
+    document.getElementById("popup-2").style.display = "flex";
+  }
+  
+  function closeCategory() {
+    document.getElementById("popup-2").style.display = "none";
+  }
+  
+  function openContactUs() {
+    document.getElementById("popup-3").style.display = "flex";
+  }
+  
+  function closeContactUs() {
+    document.getElementById("popup-3").style.display = "none";
+  }
+  
+  // Funksionet per butonat
+  const categories = [
+    'physics', 'history', 'geography', 'zoology', 'astronomy',
+    'biology', 'chemistry', 'math', 'philosophy', 'psychology',
+    'sociology', 'art', 'music'
+  ];
+    
+  categories.forEach(category => {
+    const button = document.getElementById(`learn-${category}`);
+    button.addEventListener('click', () => {
+      window.location.href = `${category}/${category}.html`;
+    });
+  });
+    
+  //Logjika per shigjetat
+  window.addEventListener('load', () => {
+    const sections = {
+      'main': document.getElementById('main-category-grid'),
+      'group-2': document.getElementById('category-group-2'),
+      'group-3': document.getElementById('category-group-3')
+    };
+    
+    const sectionOrder = ['main', 'group-2', 'group-3'];
+  
+    const showSection = (sectionKey) => {
+      Object.keys(sections).forEach(key => {
+        if (key === sectionKey) {
+          sections[key].classList.remove('is-hidden');
+        } else {
+          sections[key].classList.add('is-hidden');
+        }
+      });
+      localStorage.setItem('section', sectionKey);
+    };
+  
+    const savedSection = localStorage.getItem('section');
+    if (savedSection && sections[savedSection]) {
+      showSection(savedSection);
+    } else {
+      showSection('main');
+    }
+    
+    const navigate = (direction) => {
+      const currentSection = localStorage.getItem('section') || 'main';
+      const currentIndex = sectionOrder.indexOf(currentSection);
+      let nextIndex;
+      
+      if (direction === 'next') {
+        nextIndex = (currentIndex + 1) % 3;
+      } else {
+        nextIndex = (currentIndex - 1 + 3) % 3;
+      }
+      
+      showSection(sectionOrder[nextIndex]);
+    };
+    
+    document.getElementById('right-arrow').addEventListener('click', () => navigate('next'));
+    document.getElementById('right-arrow2').addEventListener('click', () => navigate('next'));
+    document.getElementById('right-arrow3').addEventListener('click', () => navigate('next'));
+    document.getElementById('left-arrow').addEventListener('click', () => navigate('prev'));
+    document.getElementById('left-arrow2').addEventListener('click', () => navigate('prev'));
+    document.getElementById('left-arrow3').addEventListener('click', () => navigate('prev'));
+  
+    document.getElementById('logo').addEventListener('click', () => showSection('main'));
+    document.getElementById('home').addEventListener('click', () => {
+      showSection('main');
+      localStorage.removeItem('section');
+    });
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,979 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../images/main-photo.webp');
+  background-position: bottom right;
+  background-size: cover;
+  box-sizing: border-box;
+  padding-left: 4%;
+  padding-right: 4%;
+  font-family: Lora, serif;
+}
+
+header {
+  height: 12%;
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  font-size: 3em;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.8s ease, font-size 0.5s ease-out;
+}
+
+#logo:hover {
+  color: #99232A;
+  font-size: 3.5em;
+}
+
+nav {
+  flex: 1;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3.1rem;
+  padding: 0;
+}
+
+nav ul li {
+  list-style: none;
+  font-size: 1.313rem;
+  transition: 0.8s;
+}
+
+nav ul li:last-child {
+  margin-right: 1.1rem;
+}
+
+li:hover {
+  transform: translateY(-5px);
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+nav ul li a:hover {
+  color: #b50000;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 1.4rem;
+  width: 50%;
+  max-width: 33rem;
+  text-align: center;
+  position: relative;
+}
+
+/* popup 1 */
+.popup-content h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.expl-science-h1 {
+  font-family: Lora, serif;
+  color: #c90e0e;
+}
+
+.popup-content h2 {
+  font-family: Arial;
+  font-size: 1.8rem;
+  margin-bottom: 1.4rem;
+}
+
+.expl, .expl2 {
+  color: #c90e0e;
+  font-family: Lora, serif;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.expl3 {
+  color: #c21520;
+}
+
+.popup-content p {
+  font-family: Arial;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/* popup 2 */
+.category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-list li {
+  display: block;
+  margin: 0.6rem 0;
+  pointer-events: none;
+  cursor: default;
+}
+
+.category-list li:last-child {
+  margin: 0;
+}
+
+.category-list li a {
+  display: inline-block;
+  width: 100%;
+  padding: 0.344rem 0;
+  background-color: #ddd;
+  color: #2B2B2B;
+  font-size: 1.063rem;
+  text-decoration: none;
+  border-radius: 0.313rem;
+  pointer-events: auto;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.category-list li a:hover {
+  cursor: pointer;
+  background-color: #333;
+  color: #f00;
+  transform: scale(1.1);
+}
+
+/* popup-3 */
+.popup-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+}
+
+.popup-content label[for="name"],
+.popup-content label[for="email"],
+.popup-content label[for="message"] {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 0.25rem;
+}
+
+.popup-content textarea {
+  height: 6.25rem;
+}
+
+.popup-content input:focus,
+.popup-content textarea:focus {
+  border-color: #b50000;
+  outline: none;
+}
+
+/* Stil i perbashket per te gjihte butonat */
+.popup-content button {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: #111;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  border-color: #999;
+  background-color: #222;
+}
+
+/* Stil specifik per 'submit button' */
+.popup-content button[type="submit"] {
+  font-size: 0.938rem;
+  margin-top: 0.25rem;
+}
+
+/* Stil specifik per close-btn */
+.popup-content .close-btn {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  padding: 0.188rem 0.438rem;
+  font-size: 1.2rem;
+}
+
+.popup-content form p {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+[data-tooltip] {
+  position: relative;
+  cursor: pointer; 
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip); 
+  position: absolute;
+  bottom: 100%; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333; 
+  color: #fff;
+  padding: 0.313rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+[data-tooltip]:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+main > :first-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 15rem;
+  text-align: center;
+}
+
+main h1 {
+  font-family: Lora, serif;
+  font-size: 2.5em;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  animation: fadeInUp 1.9s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0.5;
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(-18px);
+  }
+}
+
+/* Stilizim per butonin e fizikes */
+.featured-category {
+  flex-basis: 50%;
+}
+
+.physics-category-description {
+  font-size: 1.2em;
+  color: #fff;
+  width: 390px;
+  position: relative;
+  display: block;
+}
+
+.physics-category-description::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  color: #030194;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: width 1s ease;
+}
+
+.physics-category-description:hover::before {
+  width: 100%;
+  color: #940101;
+}
+
+.category-physics {
+  padding: 0.25rem;
+  width: 21.875rem;
+  height: 6.25rem;
+  margin-top: 0.688rem;
+  margin-left: 0.25rem;
+  font-size: 1.563rem;
+  color: #fff;
+  background-color: inherit;
+  transition: 0.5s;
+}
+
+.category-physics:hover {
+  background: #000;
+}
+
+/* Strukturim per butonat e lendeve */
+.main-category-grid,
+.secondary-category-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  margin-left: 3.125rem;
+  position: relative;
+}
+
+.secondary-category-grid {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.secondary-category-grid:not(.is-hidden) {
+  opacity: 1;
+}
+.is-hidden {
+  display: none;
+}
+
+/* stilizimi per shigjeta */
+.category-nav {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 83%;
+  top: 50%;
+  right: -3%;
+  transform: translate(0, -50%);
+}
+
+.arrow-link {
+  font-size: 1.7em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.arrow-link:hover,
+.arrow-link:focus {
+  color: #b50000;
+}
+
+/* Stilizim per butonat e lendeve */
+.category-button {
+  width: 13.75rem;
+  height: 15.625rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.4s;
+  border: none;
+  padding: 0;
+}
+
+.category-button:hover {
+  transform: translateY(-12px);
+}
+
+.category-button:focus {
+  outline: 1px solid #99232A; /*#c90e0e #c21520 #99232A*/
+}
+
+.category-history { background-image: url('../images/history.webp'); margin-left: 8.438rem; }
+.category-geography { background-image: url('../images/geography.webp'); }
+.category-zoology { background-image: url('../images/zoology.webp'); margin-left: 8.438rem; }
+.category-astronomy { background-image: url('../images/astronomy.webp'); }
+.category-biology { background-image: url('../images/biology.webp'); margin-left: 8.438rem; }
+.category-chemistry { background-image: url('../images/chemistry.webp'); }
+.category-math { background-image: url('../images/math.webp'); margin-left: 8.438rem; }
+.category-philosophy { background-image: url('../images/philosophy.webp'); }
+.category-psychology { background-image: url('../images/psychology.webp'); margin-left: 8.438rem; }
+.category-sociology { background-image: url('../images/sociology.webp'); }
+.category-art { background-image: url('../images/art.webp'); margin-left: 8.438rem; }
+.category-music { background-image: url('../images/music.webp'); }
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 0.5rem;
+  margin-bottom: 0;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Pajisje me gjeresi maksimale ekrani prej 1200px (≤1200px) */
+@media (max-width: 1200px) {
+  header {
+    height: 10%;
+  }
+  
+  #logo {
+    font-size: 2.6em;
+  }
+  
+  nav ul li {
+    font-size: 1.199rem;
+  }
+  
+  main > :first-child {
+    top: 363px;
+    left: 15%;
+  }
+  
+  .featured-category {
+    position: absolute;    
+    top: 80px;
+    left: 0;
+  }
+  
+  .physics-category-description {
+    font-size: 1em;
+  }
+  
+  .category-physics {
+    width: 15.275rem;
+    height: 5.25rem;
+    font-size: 1.1rem;
+  }
+  
+  .main-category-grid {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .category-button {
+    width: 12.75rem;
+    height: 15.625rem;
+  }
+  
+  .category-history,
+  .category-zoology {
+    margin-left: 0;
+  }
+  
+  .category-nav {
+    width: 110%;
+    right: -5%;
+  }
+  
+  main h1 {
+    font-size: 2.3em;
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Pajisje me gjeresi maksimale ekrani prej 920px (≤920px) */
+@media (max-width: 920px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    background-image: url('../images/main-photo-480.webp');
+    background-position: 99% 1%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 24vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #logo {
+    font-size: 2.9em;
+    color: #99232A;
+    font-weight: bold;
+    margin: 1.2rem 0 0;
+  }
+
+  nav {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.3rem;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  nav ul li {
+    font-size: 1.39rem;
+  }
+  
+  nav ul li:last-child {
+    margin: 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  main > :first-child {
+    display: block;
+    position: static;
+    width: auto;
+    margin: 0 0 2.5rem;
+    transform: none;
+  }
+
+  .featured-category {
+    width: 100%;
+    margin: 1.9rem;
+    padding: 0;
+    text-align: center;
+    position: static;
+  }
+  
+  .physics-category-description {
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .category-physics {
+    width: 9rem;
+    height: 4rem;
+    font-size: 1.2rem;
+    margin: auto;
+  }
+
+  .main-category-grid,
+  .secondary-category-grid {
+    display: grid;
+    width: 80%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 14px;
+    padding: 0 8% 0 8%;
+    margin: 0 0 8px 0;
+    position: static;
+  }
+
+  #category-group-2,
+  #category-group-3 {
+    display: grid !important;
+    opacity: 1 !important;
+  }
+
+  .category-button {
+    width: 100%;
+    height: 14.5rem;
+    margin: 0;
+    transform: none !important; 
+    transition: none !important; 
+  }
+
+  .category-button:hover {
+    transform: none !important;
+  }
+
+  .category-button:active {
+    animation: none !important; 
+  }
+
+  .category-button[data-tooltip]::before {
+    display: none !important;
+  }
+
+  .category-nav {
+    display: none;
+  }
+  
+  .popup-content {
+    width: 90%;
+    max-width: 100%; 
+    padding: 1rem; 
+  }
+
+  .popup-content h1,
+  .popup-content h2 {
+    font-size: 1.5rem; 
+  }
+
+  .popup-content p,
+  .category-list li a {
+    font-size: 1rem; 
+  }
+
+  .popup-content button {
+    padding: 0.4rem 0.8rem; 
+  }
+  
+  footer {
+    position: static;
+    transform: none;
+  }
+}
+
+/* Pajisje me gjeresi maksimale 620px (≤620px) */
+@media (max-width: 620px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    background-image: url('../images/main-photo-480.webp');
+    background-position: 99% 1%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 24vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #logo {
+    font-size: 2.8em;
+    color: #99232A;
+    font-weight: bold;
+    margin: 1.2rem 0 0;
+  }
+
+  nav {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.3rem;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  nav ul li {
+    font-size: 1.234rem;
+  }
+  
+  nav ul li:last-child {
+    margin: 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  main > :first-child {
+    display: block;
+    position: static;
+    width: auto;
+    margin: 0 0 2.5rem;
+    transform: none;
+  }
+
+  .featured-category {
+    width: 100%;
+    margin: 1.9rem;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .physics-category-description {
+    width: 100%;
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .category-physics {
+    width: 9rem;
+    height: 4rem;
+    font-size: 1.2rem;
+    margin: auto;
+  }
+
+  .main-category-grid,
+  .secondary-category-grid {
+    display: grid;
+    width: 94%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+    padding: 0;
+    margin: 0 0 8px 0;
+  }
+
+  #category-group-2,
+  #category-group-3 {
+    display: grid !important;
+    opacity: 1 !important;
+  }
+
+  .category-button {
+    width: 100%;
+    height: 12.5rem;
+    margin: 0;
+    transform: none !important; 
+    transition: none !important; 
+  }
+
+  .category-button:hover {
+    transform: none !important;
+  }
+
+  .category-button:active {
+    animation: none !important; 
+  }
+
+  .category-button[data-tooltip]::before {
+    display: none !important;
+  }
+
+  .category-nav {
+    display: none;
+  }
+  
+  .popup-content {
+    width: 90%;
+    max-width: 100%; 
+    padding: 1rem; 
+  }
+
+  .popup-content h1,
+  .popup-content h2 {
+    font-size: 1.5rem; 
+  }
+
+  .popup-content p,
+  .category-list li a {
+    font-size: 1rem; 
+  }
+
+  .popup-content button {
+    padding: 0.4rem 0.8rem; 
+  }
+}
+
+/* Pajisje me madhesi shume te vogel ekrani (≤360px) */
+@media (max-width: 360px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    background-image: url('../images/main-photo-480.webp');
+    background-position: 87% 13%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 24vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #logo {
+    font-size: 2.8em;
+    color: #99232A;
+    font-weight: bold;
+    margin: 1.2rem 0 0;
+  }
+
+  nav {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vh;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  nav ul li {
+    font-size: 1.199rem;
+  }
+  
+  nav ul li:last-child {
+    margin: 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  main > :first-child {
+    display: block;
+    position: static;
+    width: auto;
+    margin: 0 0 2.5rem;
+    transform: none;
+  }
+
+  .featured-category {
+    width: 100%;
+    margin: 1.9rem;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .physics-category-description {
+    width: 99%;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .category-physics {
+    width: 9rem;
+    height: 4rem;
+    font-size: 1.2rem;
+    margin: auto;
+  }
+
+  .main-category-grid,
+  .secondary-category-grid {
+    display: grid;
+    width: 94%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+    padding: 0;
+    margin-bottom: 12px;
+    overflow-y: auto;
+  }
+
+  #category-group-2,
+  #category-group-3 {
+    display: grid !important;
+    opacity: 1 !important;
+  }
+
+  .category-button {
+    width: 100%;
+    height: 12.5rem;
+    margin: 0;
+    transform: none !important; 
+    transition: none !important; 
+  }
+
+  .category-button:hover {
+    transform: none !important;
+  }
+
+  .category-button:active {
+    animation: none !important; 
+  }
+
+  .category-button[data-tooltip]::before {
+    display: none !important;
+  }
+
+  .category-nav {
+    display: none;
+  }
+  
+  .popup-content {
+    width: 95%;
+    padding: 0.8rem; 
+  }
+
+  .popup-content h1,
+  .popup-content h2 {
+    font-size: 1.3rem; 
+  }
+
+  .popup-content p,
+  .category-list li a {
+    font-size: 0.9rem; 
+  }
+
+  .popup-content button {
+    padding: 0.3rem 0.6rem; 
+  }
+}

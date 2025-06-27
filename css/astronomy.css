@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  padding-right: 4%;
+  padding-left: 4%;
+  padding-bottom: 40px;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 3em;
+  font-family: Lora;
+  display: inline-block;
+}
+
+.learn {
+  width: 298px;
+  height: 260px;
+  background-color: blue;
+  display: inline-block;
+  margin: 12px 10px 30px 10px;
+  padding: 10px 15px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: blue;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 12px;
+  margin-top: 257px;
+  margin-left: 108px;
+  background: #f00;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.learn1 {
+  background-image: url('../images/the-big-bang-theory.jpg');
+}
+
+.learn2 {
+  background-image: url('../images/universe.webp');
+}
+
+.learn3 {
+  background-image: url('../images/stars.webp');
+}
+
+.learn4 {
+  background-image: url('../images/milky-way-galaxy.jpg')
+}
+
+.learn5 {
+  background-image: url('../images/andromeda-galaxy.webp');
+}
+
+.learn6 {
+  background-image: url('../images/whirlpool-galaxy.webp');
+}
+
+.learn7 {
+  background-image: url('../images/the-sun.webp');
+}
+
+.learn8 {
+  background-image: url('../images/planets.webp');
+}
+
+.learn9 {
+  background-image: url('../images/earth.webp');
+}
+
+.learn10 {
+  background-image: url('../images/moon.webp');
+}
+
+.learn11 {
+  background-image: url('../images/saturn.webp');
+}
+
+.learn12 {
+  background-image: url('../images/black-hole.webp');
+}
