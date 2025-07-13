@@ -1,22 +1,27 @@
 # ExploreSci
 
-ExploreSci eshte nje platforme edukative e ndertuar per te ndihmuar perdoruesit te mesojne tema shkencore permes nje nderfaqeje interaktive dhe te pergjegjshme. Ky projekt synon te krijoje nje mjedis te thjeshte dhe terheqes per eksplorimin e shkences, duke perdorur dizajn modern dhe navigim te lehte.
+ExploreSci is an educational platform designed to help users learn scientific, philosophical, and artistic topics through an interactive and responsive interface. This project aims to create a simple and engaging environment for exploring knowledge, utilizing modern design and easy navigation.
 
-## Pershkrim
-Ky projekt ofron nje sere temash shkencore, filozofike dhe artistike me artikuj te shkurter dhe vizuale mbreselenese. Eshte i optimizuar per te gjitha pajisjet, duke perdorur teknika te pergjegjshme te dizajnit. Ideja erdhi nga deshira per te bere edukimin me te arritshem dhe te argetueshem.
+## Description
 
-## Teknologji
-- **HTML5**: Per strukturen baze dhe semantiken.
-- **CSS3**: Per stilizim dhe pergjegjshmeri me Flexbox dhe Grid.
-- **JavaScript**: Per interaktivitet dhe dinamizem.
+This project offers a range of concise articles and stunning visuals. It is optimized for all devices, utilizing **responsive design techniques** including **Flexbox** and **Grid**. The idea originated from a desire to make education more accessible and enjoyable.
+
+## Technologies Used
+
+* **HTML5**: For core structure and semantics.
+* **CSS3**: For styling and responsiveness, specifically leveraging **Flexbox** and **Grid**.
+* **JavaScript**: For interactivity and dynamic content.
 
 ## Demo
-[Shiko Live](https://XhulianDev.github.io/exploresci/)
 
-## Rrugetimi Im
-Ky eshte nje nga projektet e mia te para, nje hap i rendesishem ne udhetimin tim ne zhvillimin e web-it. Jam i motivuar te zhvillohem akoma me tej dhe te krijoj platforma me komplekse ne te ardhmen.
+[View Live](https://XhulianDev.github.io/exploresci/)
 
-## Kontakti
-Per mundesi bashkepunimi ose pyetje, me kontaktoni:
-- Email: [xhulianazemi9@gmail.com](mailto:xhulianazemi9@gmail.com)  
-- GitHub: [XhulianDev](https://github.com/XhulianDev)
+## My Journey
+
+This is one of my initial projects, representing a significant step in my web development journey. I am highly motivated to further develop my skills and create more complex platforms in the future.
+
+## Contact
+
+For collaboration opportunities or inquiries, please contact me:
+* Email: [xhulianazemi9@gmail.com](mailto:xhulianazemi9@gmail.com)
+* GitHub: [XhulianDev](https://github.com/XhulianDev)
