@@ -28,6 +28,38 @@
       const formattedSubject = subject.charAt(0).toUpperCase() + subject.slice(1);
       backLink.innerText = `Back to ${formattedSubject}`;
     }
+
+    fetch(`${subject}/${subject}_data.json`)
+      .then(response => {
+        if (!response.ok) throw new Error('Data file not found');
+        return response.json();
+      })
+      .then(data => {
+        const topic = data.topics.find(t => t.id === `page-${pageId}`);
+
+        if (topic) {
+          document.title = topic.title;
+
+          let htmlContent = `<h1>${topic.title}</h1>`;
+
+          topic.sections.forEach(section => {
+            htmlContent += `
+              <section style="margin-bottom: 30px;">
+                <h2>${section.heading}</h2>
+                ${section.paragraphs.map(p => `<p style="line-height: 1.6;">${p}</p>`).join('')}
+              </section>
+            `;
+          });
+
+          document.getElementById('content-area').innerHTML = htmlContent;
+        } else {
+          document.getElementById('content-area').innerHTML = "<h1>Topic Not Found</h1>";
+        }
+      })
+      .catch(error => {
+        console.error('Error loading the content:', error);
+        document.getElementById('content-area').innerHTML = "<h1>Error loading content. Please try again later.</h1>";
+      });
   </script>
 </body>
 </html>
