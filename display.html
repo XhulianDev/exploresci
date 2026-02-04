@@ -4,13 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Loading Topic...</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
   <header>
-    <nav>
-      <a href="index.html" id="back-link">Back</a>
-    </nav>
+    <h1 id="main-title">Loading...</h1>
   </header>
 
   <main id="content-area">
@@ -22,13 +20,6 @@
     const pageId = urlParams.get('id');
     const subject = urlParams.get('subject') || 'physics';
 
-    const backLink = document.getElementById('back-link');
-    if (backLink) {
-      backLink.href = `${subject}.html`;
-      const formattedSubject = subject.charAt(0).toUpperCase() + subject.slice(1);
-      backLink.innerText = `Back to ${formattedSubject}`;
-    }
-
     fetch(`${subject}/${subject}_data.json`)
       .then(response => {
         if (!response.ok) throw new Error('Data file not found');
@@ -39,8 +30,9 @@
 
         if (topic) {
           document.title = topic.title;
+          document.getElementById('main-title').innerText = topic.title;
 
-          let htmlContent = `<h1>${topic.title}</h1>`;
+          let htmlContent = "";
 
           topic.sections.forEach(section => {
             htmlContent += `
