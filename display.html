@@ -16,5 +16,18 @@
   <main id="content-area">
     <p>Loading content...</p>
   </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageId = urlParams.get('id');
+    const subject = urlParams.get('subject') || 'physics';
+
+    const backLink = document.getElementById('back-link');
+    if (backLink) {
+      backLink.href = `${subject}.html`;
+      const formattedSubject = subject.charAt(0).toUpperCase() + subject.slice(1);
+      backLink.innerText = `Back to ${formattedSubject}`;
+    }
+  </script>
 </body>
 </html>
