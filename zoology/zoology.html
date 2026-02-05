@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Zoology</title>
+  <title>Zoology - ExploreSci</title>
   <link rel="stylesheet" href="../css/subjects.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -13,41 +13,42 @@
   <main class="topics-container">
     <div class="topic">
       <img src="../images/lion.webp" alt="Lion" class="topic-image" loading="lazy">
-      <button onclick="openDoc()" aria-label="Learn about Lion">Learn</button>
+      <button aria-label="Learn about Lion">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/crocodile.webp" alt="Crocodile" class="topic-image" loading="lazy">
-      <button onclick="openDoc2()" aria-label="Learn about Crocodile">Learn</button>
+      <button aria-label="Learn about Crocodile">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/tiger.webp" alt="Tiger" class="topic-image" loading="lazy">
-      <button onclick="openDoc3()" aria-label="Learn about Tiger">Learn</button>
+      <button aria-label="Learn about Tiger">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/eagle.webp" alt="Eagle" class="topic-image" loading="lazy">
-      <button onclick="openDoc4()" aria-label="Learn about Eagle">Learn</button>
+      <button aria-label="Learn about Eagle">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/komodo-dragon.jpg" alt="Komodo Dragon" class="topic-image" loading="lazy">
-      <button onclick="openDoc5()" aria-label="Learn about Komodo Dragon">Learn</button>
+      <button aria-label="Learn about Komodo Dragon">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/jaguar.webp" alt="Jaguar" class="topic-image" loading="lazy">
-      <button onclick="openDoc6()" aria-label="Learn about Jaguar">Learn</button>
+      <button aria-label="Learn about Jaguar">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/python.webp" alt="Python" class="topic-image" loading="lazy">
-      <button onclick="openDoc7()" aria-label="Learn about Python">Learn</button>
+      <button aria-label="Learn about Python">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/leopard.jpg" alt="Leopard" class="topic-image" loading="lazy">
-      <button onclick="openDoc8()" aria-label="Learn about Leopard">Learn</button>
+      <button aria-label="Learn about Leopard">Learn</button>
     </div>
   </main>
+
   <script>
     document.querySelectorAll('.topic button').forEach((btn, index) => {
       btn.addEventListener('click', () => {
-        window.location.href = `page-${index + 1}.html`;
+        window.location.href = `../display.html?subject=zoology&id=${index + 1}`;
       });
     });
   </script>
