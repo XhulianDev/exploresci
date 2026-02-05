@@ -13,42 +13,42 @@
   <main class="topics-container">
     <div class="topic">
       <img src="../images/ww1.jpg" alt="World War I" class="topic-image" loading="lazy">
-      <button onclick="openDoc()" aria-label="Learn about World War I">Learn</button>
+      <button aria-label="Learn about World War I">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/ww2.webp" alt="World War II" class="topic-image" loading="lazy">
-      <button onclick="openDoc2()" aria-label="Learn about World War II">Learn</button>
+      <button aria-label="Learn about World War II">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/october-revolution.webp" alt="October Revolution" class="topic-image" loading="lazy">
-      <button onclick="openDoc3()" aria-label="Learn about the October Revolution">Learn</button>
+      <button aria-label="Learn about the October Revolution">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/napoleon-wars.webp" alt="Napoleonic Wars" class="topic-image" loading="lazy">
-      <button onclick="openDoc4()" aria-label="Learn about the Napoleonic Wars">Learn</button>
+      <button aria-label="Learn about the Napoleonic Wars">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/spanish-war.webp" alt="Spanish Civil War" class="topic-image" loading="lazy">
-      <button onclick="openDoc5()" aria-label="Learn about the Spanish Civil War">Learn</button>
+      <button aria-label="Learn about the Spanish Civil War">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/constantinople.webp" alt="Fall of Constantinople" class="topic-image" loading="lazy">
-      <button onclick="openDoc6()" aria-label="Learn about the Fall of Constantinople">Learn</button>
+      <button aria-label="Learn about the Fall of Constantinople">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/vietnam-war.webp" alt="Vietnam War" class="topic-image" loading="lazy">
-      <button onclick="openDoc7()" aria-label="Learn about the Vietnam War">Learn</button>
+      <button aria-label="Learn about the Vietnam War">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/1st-balkan-war.webp" alt="First Balkan War" class="topic-image" loading="lazy">
-      <button onclick="openDoc8()" aria-label="Learn about the First Balkan War">Learn</button>
+      <button aria-label="Learn about the First Balkan War">Learn</button>
     </div>
   </main>
 
   <script>
     document.querySelectorAll('.topic button').forEach((btn, index) => {
       btn.addEventListener('click', () => {
-        window.location.href = `page-${index + 1}.html`;
+        window.location.href = `../display.html?subject=history&id=${index + 1}`;
       });
     });
   </script>
