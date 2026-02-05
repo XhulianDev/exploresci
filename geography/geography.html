@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Geography</title>
+  <title>Geography - ExploreSci</title>
   <link rel="stylesheet" href="../css/geography.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -13,41 +13,42 @@
   <main class="topics-container">
     <div class="topic">
       <img src="../images/oceanography.jpg" alt="Oceanography" class="topic-image" loading="lazy">
-      <button onclick="openDoc()" aria-label="Learn about Oceanography">Learn</button>
+      <button aria-label="Learn about Oceanography">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/meterology.jpg" alt="Meteorology" class="topic-image" loading="lazy">
-      <button onclick="openDoc2()" aria-label="Learn about Meteorology">Learn</button>
+      <button aria-label="Learn about Meteorology">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/human-geography.jpg" alt="Human Geography" class="topic-image" loading="lazy">
-      <button onclick="openDoc3()" aria-label="Learn about Human Geography">Learn</button>
+      <button aria-label="Learn about Human Geography">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/amazon-rainforest.webp" alt="Amazon Rainforest" class="topic-image" loading="lazy">
-      <button onclick="openDoc4()" aria-label="Learn about the Amazon Rainforest">Learn</button>
+      <button aria-label="Learn about the Amazon Rainforest">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/grand-canyon.webp" alt="Grand Canyon" class="topic-image" loading="lazy">
-      <button onclick="openDoc5()" aria-label="Learn about the Grand Canyon">Learn</button>
+      <button aria-label="Learn about the Grand Canyon">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/great-blue-hole.jpg" alt="Great Blue Hole" class="topic-image" loading="lazy">
-      <button onclick="openDoc6()" aria-label="Learn about the Great Blue Hole">Learn</button>
+      <button aria-label="Learn about the Great Blue Hole">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/northern-lights.webp" alt="Northern Lights" class="topic-image" loading="lazy">
-      <button onclick="openDoc7()" aria-label="Learn about the Northern Lights">Learn</button>
+      <button aria-label="Learn about the Northern Lights">Learn</button>
     </div>
     <div class="topic">
       <img src="../images/lofoten.webp" alt="Lofoten Islands" class="topic-image" loading="lazy">
-      <button onclick="openDoc8()" aria-label="Learn about the Lofoten Islands">Learn</button>
+      <button aria-label="Learn about the Lofoten Islands">Learn</button>
     </div>
   </main>
+
   <script>
     document.querySelectorAll('.topic button').forEach((btn, index) => {
       btn.addEventListener('click', () => {
-        window.location.href = `page-${index + 1}.html`;
+        window.location.href = `../display.html?subject=geography&id=${index + 1}`;
       });
     });
   </script>
