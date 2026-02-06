@@ -16,9 +16,9 @@
     <nav>
       <ul>
         <li><a href="index.html" id="home">Home</a></li>
-        <li><a href="#" onclick="openAbout()">About</a></li>
-        <li><a href="#" onclick="openCategory()">Category</a></li>
-        <li><a href="#" onclick="openContactUs()">Contact Us</a></li>
+        <li><a href="#" onclick="openModal('popup-about')">About</a></li>
+        <li><a href="#" onclick="openModal('popup-category')">Category</a></li>
+        <li><a href="#" onclick="openModal('popup-contact')">Contact Us</a></li>
       </ul>
     </nav>
   </header>
@@ -90,52 +90,5 @@
   <footer>
     <p>&copy; 2025 Xhulian Azemi. All rights reserved.</p>
   </footer>
-  <script>
-  function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    form.reset();
-    const successMsg = document.createElement('p');
-    successMsg.textContent = 'Message sent successfully!';
-    successMsg.style.color = '#b50000';
-    form.appendChild(successMsg);
-    setTimeout(() => { successMsg.remove(); closeContactUs(); }, 3000);
-  }
-  
-  function openAbout() {
-    document.getElementById("popup").style.display = "flex";
-  }
-  
-  function closeAbout() {
-    document.getElementById("popup").style.display = "none";
-  }
-  
-  function openCategory() {
-    document.getElementById("popup-2").style.display = "flex";
-  }
-  
-  function closeCategory() {
-    document.getElementById("popup-2").style.display = "none";
-  }
-  
-  function openContactUs() {
-    document.getElementById("popup-3").style.display = "flex";
-  }
-  
-  function closeContactUs() {
-    document.getElementById("popup-3").style.display = "none";
-  }
-  
-  const categories = [
-    'physics', 'history', 'geography', 'zoology', 'astronomy'
-  ];
-    
-  categories.forEach(category => {
-    const button = document.getElementById(`learn-${category}`);
-    button.addEventListener('click', () => {
-      window.location.href = `${category}/${category}.html`;
-    });
-  });
-  </script>
 </body>
 </html>
