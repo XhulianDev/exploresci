@@ -52,7 +52,7 @@ header {
 nav ul {
   display: flex;
   list-style: none;
-  gap: 2.5rem;
+  gap: 3.125rem;
 }
 
 nav ul li button,
@@ -132,7 +132,8 @@ dialog.modal::backdrop {
   padding-right: 2.5rem;
 }
 
-.expl, .expl2 {
+.expl,
+.expl2 {
   color: #c90e0e;
   font-family: Lora, serif;
   font-weight: bold;
@@ -248,16 +249,16 @@ dialog.modal::backdrop {
 
 [data-tooltip] {
   position: relative;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 [data-tooltip]::before {
-  content: attr(data-tooltip); 
+  content: attr(data-tooltip);
   position: absolute;
-  bottom: 100%; 
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333; 
+  background-color: #333;
   color: #fff;
   padding: 0.313rem 0.5rem;
   border-radius: 0.25rem;
@@ -274,9 +275,12 @@ dialog.modal::backdrop {
 }
 
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  min-height: 80vh;
   position: relative;
+  gap: 2rem;
 }
 
 main > :first-child {
@@ -284,16 +288,17 @@ main > :first-child {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 15rem;
+  z-index: 5;
   text-align: center;
+  width: 15.625rem;
+  pointer-events: none;
 }
 
 main h1 {
-  font-family: Lora, serif;
+  font-family: var(--font-main);
   font-size: 2.5em;
-  color: #fff;
+  color: var(--text-light);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin: 0;
   animation: fadeInUp 1.9s ease-in-out infinite alternate;
 }
 
@@ -308,128 +313,64 @@ main h1 {
   }
 }
 
-/* Stilizim per butonin e fizikes */
 .featured-category {
-  flex-basis: 50%;
+  justify-self: start;
+  padding-left: 2rem;
 }
 
 .physics-category-description {
   font-size: 1.2em;
-  color: #fff;
-  width: 390px;
-  position: relative;
-  display: block;
-}
-
-.physics-category-description::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  color: #030194;
-  white-space: nowrap;
-  overflow: hidden;
-  transition: width 1s ease;
-}
-
-.physics-category-description:hover::before {
-  width: 100%;
-  color: #940101;
+  color: var(--text-light);
+  max-width: 390px;
+  line-height: 1.4;
 }
 
 .category-physics {
-  padding: 0.25rem;
+  display: block;
   width: 21.875rem;
   height: 6.25rem;
-  margin-top: 0.688rem;
-  margin-left: 0.25rem;
+  margin-top: 1rem;
   font-size: 1.563rem;
   color: #fff;
-  background-color: inherit;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
   transition: 0.5s;
 }
 
 .category-physics:hover {
   background: #000;
+  border-color: var(--primary-dark);
 }
 
-/* Strukturim per butonat e lendeve */
-.main-category-grid,
-.secondary-category-grid {
+.main-category-grid {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  gap: 1rem;
-  margin-left: 3.125rem;
-  position: relative;
+  grid-template-columns: repeat(2, 13.75rem);
+  gap: 0.625rem;
+  justify-self: end;
+  align-items: center;
 }
 
-.secondary-category-grid {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.secondary-category-grid:not(.is-hidden) {
-  opacity: 1;
-}
-.is-hidden {
-  display: none;
-}
-
-/* stilizimi per shigjeta */
-.category-nav {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  width: 83%;
-  top: 50%;
-  right: -3%;
-  transform: translate(0, -50%);
-}
-
-.arrow-link {
-  font-size: 1.7em;
-  color: #fff;
-  cursor: pointer;
-}
-
-.arrow-link:hover,
-.arrow-link:focus {
-  color: #b50000;
-}
-
-/* Stilizim per butonat e lendeve */
 .category-button {
-  width: 13.75rem;
-  height: 15.625rem;
+  width: 100%;
+  height: 18.125rem;
   border-radius: 0.625rem;
   cursor: pointer;
   background-position: center;
   background-size: cover;
-  transition: transform 0.4s;
   border: none;
-  padding: 0;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
 .category-button:hover {
-  transform: translateY(-12px);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-.category-button:focus {
-  outline: 1px solid #99232A; /*#c90e0e #c21520 #99232A*/
-}
-
-.category-history { background-image: url('../images/history.webp'); margin-left: 8.438rem; }
+.category-history { background-image: url('../images/history.webp'); }
 .category-geography { background-image: url('../images/geography.webp'); }
-.category-zoology { background-image: url('../images/zoology.webp'); margin-left: 8.438rem; }
+.category-zoology { background-image: url('../images/zoology.webp'); }
 .category-astronomy { background-image: url('../images/astronomy.webp'); }
-.category-biology { background-image: url('../images/biology.webp'); margin-left: 8.438rem; }
-.category-chemistry { background-image: url('../images/chemistry.webp'); }
-.category-math { background-image: url('../images/math.webp'); margin-left: 8.438rem; }
-.category-philosophy { background-image: url('../images/philosophy.webp'); }
-.category-psychology { background-image: url('../images/psychology.webp'); margin-left: 8.438rem; }
-.category-sociology { background-image: url('../images/sociology.webp'); }
-.category-art { background-image: url('../images/art.webp'); margin-left: 8.438rem; }
-.category-music { background-image: url('../images/music.webp'); }
 
 footer {
   text-align: center;
