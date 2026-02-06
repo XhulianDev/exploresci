@@ -70,32 +70,32 @@ nav ul li a:hover {
   color: #b50000;
 }
 
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 99;
+dialog.modal {
+  border: none;
+  padding: 0;
+  width: 90%;
+  max-width: 33rem;
+  margin: auto;
+  background: transparent;
+  outline: none;
 }
 
-.popup-content {
+dialog.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
   background-color: #fff;
   padding: 1.4rem;
-  width: 50%;
-  max-width: 33rem;
   text-align: center;
   position: relative;
 }
 
-/* popup 1 */
-.popup-content h1 {
+.modal-content h1 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
+  padding-right: 2.5rem;
 }
 
 .expl-science-h1 {
@@ -103,10 +103,11 @@ nav ul li a:hover {
   color: #c90e0e;
 }
 
-.popup-content h2 {
+.modal-content h2 {
   font-family: Arial;
   font-size: 1.8rem;
   margin-bottom: 1.4rem;
+  padding-right: 2.5rem;
 }
 
 .expl, .expl2 {
@@ -120,14 +121,13 @@ nav ul li a:hover {
   color: #c21520;
 }
 
-.popup-content p {
+.modal-content p {
   font-family: Arial;
   font-size: 1.2rem;
   line-height: 1.5;
   margin: 0 auto;
 }
 
-/* popup 2 */
 .category-list {
   list-style: none;
   margin: 0;
@@ -139,10 +139,6 @@ nav ul li a:hover {
   margin: 0.6rem 0;
   pointer-events: none;
   cursor: default;
-}
-
-.category-list li:last-child {
-  margin: 0;
 }
 
 .category-list li a {
@@ -160,21 +156,19 @@ nav ul li a:hover {
 }
 
 .category-list li a:hover {
-  cursor: pointer;
   background-color: #333;
   color: #f00;
   transform: scale(1.1);
 }
 
-/* popup-3 */
-.popup-content form {
+.modal-content form {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
 
-.popup-content input,
-.popup-content textarea {
+.modal-content input,
+.modal-content textarea {
   width: 100%;
   padding: 0.4rem;
   font-size: 1rem;
@@ -183,28 +177,26 @@ nav ul li a:hover {
   box-sizing: border-box;
 }
 
-.popup-content label[for="name"],
-.popup-content label[for="email"],
-.popup-content label[for="message"] {
+.modal-content label {
   display: block;
   font-size: 1.3rem;
   font-weight: 500;
   color: #111;
   margin-bottom: 0.25rem;
+  text-align: left;
 }
 
-.popup-content textarea {
+.modal-content textarea {
   height: 6.25rem;
 }
 
-.popup-content input:focus,
-.popup-content textarea:focus {
+.modal-content input:focus,
+.modal-content textarea:focus {
   border-color: #b50000;
   outline: none;
 }
 
-/* Stil i perbashket per te gjihte butonat */
-.popup-content button {
+.modal-content button {
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   background-color: #111;
@@ -214,30 +206,22 @@ nav ul li a:hover {
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.popup-content button:hover {
+.modal-content button:hover {
   border-color: #999;
   background-color: #222;
 }
 
-/* Stil specifik per 'submit button' */
-.popup-content button[type="submit"] {
+.modal-content button[type="submit"] {
   font-size: 0.938rem;
   margin-top: 0.25rem;
 }
 
-/* Stil specifik per close-btn */
-.popup-content .close-btn {
+.modal-content .close-btn {
   position: absolute;
   top: 0.625rem;
   right: 0.625rem;
   padding: 0.188rem 0.438rem;
   font-size: 1.2rem;
-}
-
-.popup-content form p {
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 0.5rem;
 }
 
 [data-tooltip] {
