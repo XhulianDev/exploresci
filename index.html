@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ExploreSci</title>
-  <link rel="stylesheet" href="css/styles.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExploreSci</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -20,18 +23,17 @@
     </nav>
   </header>
   
-  <div class="popup" id="popup">
-    <div class="popup-content">
+  <dialog id="popup-about" class="modal">
+    <div class="modal-content">
       <h1>About <span class="expl-science-h1">ExploreSci</span></h1>
       <p><span class="expl">ExploreSci</span> is an educational platform dedicated to making science engaging and accessible. 
-        <br>Discover comprehensive resources on key events, milestones, and topics in science. Whether you're a student,
-        teacher, or enthusiast, join us to explore the wonders of knowledge!</p>
-      <button class="close-btn" onclick="closeAbout()" tabindex="0">X</button>
+        <br>Discover comprehensive resources on key events, milestones, and topics in science.</p>
+      <button class="close-btn" onclick="closeModal('popup-about')">X</button>
     </div>
-  </div>
-  
-  <div class="popup" id="popup-2">
-    <div class="popup-content">
+  </dialog>
+
+  <dialog id="popup-category" class="modal">
+    <div class="modal-content">
       <h2>Category</h2>
       <ul class="category-list">
         <li><a href="physics/physics.html">Physics</a></li>
@@ -40,27 +42,27 @@
         <li><a href="zoology/zoology.html">Zoology</a></li>
         <li><a href="astronomy/astronomy.html">Astronomy</a></li>
       </ul>
-      <button class="close-btn" onclick="closeCategory()" tabindex="0">X</button>
+      <button class="close-btn" onclick="closeModal('popup-category')">X</button>
     </div>
-  </div>
-  
-  <div class="popup" id="popup-3">
-    <div class="popup-content">
+  </dialog>
+
+  <dialog id="popup-contact" class="modal">
+    <div class="modal-content">
       <h2>Contact Us</h2>
-        <form onsubmit="handleSubmit(event)">
-          <label for="name">Name:</label>
-          <input type="text" id="name" required autocomplete="name">
-          <label for="email" class="email">Email:</label>
-          <input type="email" id="email" required autocomplete="email">
-          <div class="message-field">
-            <label for="message">Message:</label>
-            <textarea id="message" required></textarea>
-            <button type="submit">Send</button>
-          </div>
-        </form>
-        <button class="close-btn" onclick="closeContactUs()" aria-label="Close contact form" tabindex="0">X</button>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required autocomplete="name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required autocomplete="email">
+        <div class="message-field">
+          <label for="message">Message:</label>
+          <textarea id="message" required></textarea>
+          <button type="submit">Send</button>
+        </div>
+      </form>
+      <button class="close-btn" onclick="closeModal('popup-contact')">X</button>
     </div>
-  </div>
+  </dialog>
   
   <main>
     <div class="hero">
