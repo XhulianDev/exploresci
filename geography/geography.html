@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Geography - ExploreSci</title>
-  <link rel="stylesheet" href="../css/geography.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/subjects.css">
+
+  <script src="../js/subjects.js" defer></script>
 </head>
 <body>
   <header>
@@ -44,13 +46,5 @@
       <button aria-label="Learn about the Lofoten Islands">Learn</button>
     </div>
   </main>
-
-  <script>
-    document.querySelectorAll('.topic button').forEach((btn, index) => {
-      btn.addEventListener('click', () => {
-        window.location.href = `../display.html?subject=geography&id=${index + 1}`;
-      });
-    });
-  </script>
 </body>
 </html>
